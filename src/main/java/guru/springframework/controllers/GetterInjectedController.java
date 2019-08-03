@@ -17,7 +17,9 @@ public class GetterInjectedController {
     }
 
     @Autowired
-    public void setGreetingService(@Qualifier("getterGreetingService") GreetingService greetingService) {
-        this.greetingService = greetingService;
+    //public void setGreetingService(@Qualifier("getterGreetingService") GreetingService greetingService) {
+    public void setGreetingService(GreetingService getterGreetingService) {
+        //this.greetingService = greetingService;
+        this.greetingService = getterGreetingService; //because parameter is bean name with starting lowercase this will be work
     }
 }
